@@ -26,7 +26,7 @@ $filter-base-height: $leading * 2;
 .filter-container {
     position: absolute;
     left: 0;
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     height: $filter-base-height;
     border-top: 2px solid #bd1d31;

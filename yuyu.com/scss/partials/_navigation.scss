@@ -12,12 +12,16 @@ $navigation-height: $leading * 3;
     $list-color: #991717;
     li {
         display: inline-block;
-        padding: 5px 15px;
         margin-top: -5px;
-        cursor: pointer;
         &:not(:first-child) {
             margin-left: 12px;
         }
+    }
+
+    a {
+        display: block;
+        padding: 5px 15px;
+        cursor: pointer;
         &:hover {
             color: $list-color;
             border-bottom: 2px solid $list-border-color;
