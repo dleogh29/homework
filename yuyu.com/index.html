@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shoppingmall &lt; yuyu.com</title>
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body class="show-grid">
+  <div class="container">
+    <div class="row gap2" role="banner">
+      <a class="shortcut-main" href="#slide-list">본문 바로가기</a>
+      <div class="col is-3">
+        <h1 class="logo-heading">
+          <a href="index.html" title="">
+            <img src="images/header/logo.svg" alt="youyu 홈페이지">
+          </a>
+        </h1>
+      </div>
+      <div class="col is-6">
+        <form class="search_form" action="javascript:alert('검색이 완료 되었습니다')">
+          <label class="a11y-hidden" for="search_keyword">자료 검색</label>
+          <input id="search_keyword" type="search" name="search" placeholder="검색어를 입력하세요">
+          <button class="btn_search" type="submit">
+            <span class="a11y-hidden">검색</span>
+          </button>
+        </form>
+      </div>
+      <div class="col is-3">
+        <div class="login-before">
+          <a class="link-join" href="#">회원가입</a>
+          <a class="link-login" href="#">로그인</a>
+        </div>
+        <div class="login-after hidden">
+          <a class="user-info" href="#">mika513 &blacktriangledown;</a>
+          <a class="user-basket" href="#">장바구니</a>
+          <a class="user-alert" href="#">알림정보</a>
+        </div>
+      </div>
+    </div>
+    <div class="row gap2" role="navigation">
+      <div class="col is-12">
+        <h2 class="a11y-hidden">메인 카테고리 메뉴</h2>
+        <ul class="menu-list">
+          <li class="selected-item" tabindex="0">MAIN</li>
+          <li tabindex="0">BRAND</li>
+          <li tabindex="0">SPECIAL</li>
+          <li tabindex="0">OUTER</li>
+          <li tabindex="0">TOPS</li>
+          <li tabindex="0">BOTTOM</li>
+          <li tabindex="0">DRESS</li>
+          <li tabindex="0">SHOES</li>
+          <li tabindex="0">BAG</li>
+          <li tabindex="0">ACC</li>
+          <li tabindex="0">SUMMER</li>
+          <li tabindex="0">ETC</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row gap1">
+      <div class="filter-container">
+        <h2 class="a11y-hidden">검색 필터</h2>
+        <button id="btn-filter" class="btn-filter" type="button">필터를 설정하세요</button>
+        <form class="filter-form" action="javascript:alert('필터 선택 완료');">
+          <fieldset>
+            <legend>검색 필터 폼</legend>
+
+            <div class="filter-age">
+              <h2>연령대</h2>
+              <input id="filter-age-1" type="checkbox" name="filter-age" value="10대">
+              <label for="filter-age-1" tabindex="0">10대</label>
+              <input id="filter-age-2" type="checkbox" name="filter-age" value="20대" checked>
+              <label for="filter-age-2" tabindex="0">20대</label>
+              <input id="filter-age-3" type="checkbox" name="filter-age" value="30대">
+              <label for="filter-age-3" tabindex="0">30대</label>
+            </div>
+
+            <div class="filter-style gap1">
+              <h2>스타일</h2>
+              <input id="filter-style-1" type="checkbox" name="filter-style" value="소녀룩">
+              <label for="filter-style-1" tabindex="0">소녀룩</label>
+              <input id="filter-style-2" type="checkbox" name="filter-style" value="모던시크" checked>
+              <label for="filter-style-2" tabindex="0">모던시크</label>
+              <input id="filter-style-3" type="checkbox" name="filter-style" value="심플페이지">
+              <label for="filter-style-3" tabindex="0">심플페이지</label>
+              <input id="filter-style-4" type="checkbox" name="filter-style" value="로멘틱">
+              <label for="filter-style-4" tabindex="0">로멘틱</label>
+              <input id="filter-style-5" type="checkbox" name="filter-style" value="오피스룩">
+              <label for="filter-style-5" tabindex="0">오피스룩</label>
+              <input id="filter-style-6" type="checkbox" name="filter-style" value="캠퍼스룩">
+              <label for="filter-style-6" tabindex="0">캠퍼스룩</label>
+              <input id="filter-style-7" type="checkbox" name="filter-style" value="빈티지">
+              <label for="filter-style-7" tabindex="0">빈티지</label>
+              <input id="filter-style-8" type="checkbox" name="filter-style" value="트레이닝">
+              <label for="filter-style-8" tabindex="0">트레이닝</label>
+            </div>
+            
+            <div class="filter-btn gap2">
+              <button id="btn-init" class="btn-init" type="button">초기화</button>
+              <button class="btn-complete" type="submit">필터 선택 완료</button>
+            </div>
+            
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="row gap4">
+      <div class="col is-12">
+        <div class="slide-container">
+          <h2 class="a11y-hidden">메인 배너 슬라이드</h2>
+          <ul id="slide-list" class="slide-list">
+            <li class="slide1">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide2">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide3">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide4">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide5">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide6">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide7">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide8">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide9">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+            <li class="slide10">
+              <img src="images/banner/banner-01.jpg" alt="">
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-container gap1">
+          <h2 class="a11y-hidden">메인 배너 슬라이드 캐러셀</h2>
+          <button class="btn-m-carousel selected-carousel" type="button">1번 배너</button>
+          <button class="btn-m-carousel" type="button">2번 배너</button>
+          <button class="btn-m-carousel" type="button">3번 배너</button>
+          <button class="btn-m-carousel" type="button">4번 배너</button>
+          <button class="btn-m-carousel" type="button">5번 배너</button>
+          <button class="btn-m-carousel" type="button">6번 배너</button>
+          <button class="btn-m-carousel" type="button">7번 배너</button>
+          <button class="btn-m-carousel" type="button">8번 배너</button>
+          <button class="btn-m-carousel" type="button">9번 배너</button>
+          <button class="btn-m-carousel" type="button">10번 배너</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row gap2">
+      <div class="bestseller-container">
+        <h2>베스트셀러</h2>
+        <ul class="bestseller-list">
+          <li class="col is-3">
+            <a href="#">
+              <img src="images/best-seller/bs-seller-01.jpg" alt="">
+              <span class="brand-name" title="브랜드명">Zemma World</span>
+              <span class="item-name" title="제품명">Puppy-코튼니트</span>
+              <span class="item-price" title="제품가격">39,000원</span>
+              <form action="javascript:alert('좋아요 반영')">
+                <fieldset>
+                  <legend>좋아요 반영/취소 폼</legend>
+                  <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                </fieldset>
+              </form>
+            </a>
+          </li>
+          <li class="col is-3">
+            <a href="#">
+              <img src="images/best-seller/bs-seller-02.jpg" alt="">
+              <span class="brand-name" title="브랜드명">myblin</span>
+              <span class="item-name" title="제품명">버튼 체크 원피스</span>
+              <span class="item-price" title="제품가격">41,000원</span>
+              <form action="javascript:alert('좋아요 반영')">
+                <fieldset>
+                  <legend>좋아요 반영/취소 폼</legend>
+                  <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                </fieldset>
+              </form>
+            </a>
+          </li>
+          <li class="col is-3">
+            <a href="#">
+              <img src="images/best-seller/bs-seller-03.jpg" alt="">
+              <span class="brand-name" title="브랜드명">BULLAN GIRL</span>
+              <span class="item-name" title="제품명">아미라벨맨투맨</span>
+              <span class="item-price" title="제품가격">12,500원</span>
+              <form action="javascript:alert('좋아요 반영')">
+                <fieldset>
+                  <legend>좋아요 반영/취소 폼</legend>
+                  <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                </fieldset>
+              </form>
+            </a>
+          </li>
+          <li class="col is-3">
+            <a href="#">
+              <img src="images/best-seller/bs-seller-04.jpg" alt="">
+              <span class="brand-name" title="브랜드명">MINIBBONG</span>
+              <span class="item-name" title="제품명">Night-스키니팬츠</span>
+              <span class="item-price" title="제품가격">29,900원</span>
+              <form action="javascript:alert('좋아요 반영')">
+                <fieldset>
+                  <legend>좋아요 반영/취소 폼</legend>
+                  <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                </fieldset>
+              </form>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row gap2">
+    <div class="brand-container">
+        <h2>브랜드</h2>
+        <div class="brand-fixed-container">
+          <ul id="brand-list" class="brand-list">
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-01.jpg" alt="">
+                <span>mixxmix</span>
+                <div>
+                  <span>01.mixxmix</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-02.jpg" alt="">
+                <span>REINE</span>
+                <div>
+                  <span>02.REINE</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-03.jpg" alt="">
+                <span>BANHALA</span>
+                <div>
+                  <span>03.BANHALA</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-04.jpg" alt="">
+                <span>CHERRYKOKO</span>
+                <div>
+                  <span>04.CHERRYKOKO</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-01.jpg" alt="">
+                <span>mixxmix</span>
+                <div>
+                  <span>01.mixxmix</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-02.jpg" alt="">
+                <span>REINE</span>
+                <div>
+                  <span>02.REINE</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-03.jpg" alt="">
+                <span>BANHALA</span>
+                <div>
+                  <span>03.BANHALA</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+            <li class="col is-3">
+              <a href="#">
+                <img src="images/brand/brand-04.jpg" alt="">
+                <span>CHERRYKOKO</span>
+                <div>
+                  <span>04.CHERRYKOKO</span>
+                  <form action="javascript:alert('좋아요 반영')">
+                    <fieldset>
+                      <legend>좋아요 반영/취소 폼</legend>
+                      <button class="btn-like" type="submit">좋아요 반영/취소</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="brand-btn-container">
+        <button id="btn-prev-brand" class="btn-prev-brand" type="button" title="브랜드 더보기(앞으로)">&blacktriangleleft;</button>
+        <button id="btn-next-brand" class="btn-next-brand" type="button" title="브랜드 더보기(뒤로)">&blacktriangleright;</button>
+      </div>
+    </div>
+  </div>
+
+<script src="./js/toggleStatus.js"></script>
+</body>
+</html>

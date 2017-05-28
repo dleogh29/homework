@@ -1,0 +1,156 @@
+/*! grid.css @ 2017, dhlee */
+@import 'settings';
+
+/* -----------------------------------------------------------------------------
+ * Toggle Grid Module
+ * 브라우저 뷰에 그리드 가이드를 토글(보임/감춤)하는 스타일 모듈
+ * .show-grid
+ */
+.#{$toggle-classname} {
+  position: relative;
+}
+.#{$toggle-classname}::before,
+.#{$toggle-classname}::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: $guide-height;
+}
+.#{$toggle-classname}::before {
+  $leading-limit: $leading - 1px;
+  z-index: 10000;
+  left: 0;
+  width: 100%;
+  // background: repeating-linear-gradient(180deg, transparent 0, transparent $leading-limit, #0cf $leading-limit, #0cf $leading);
+  background: linear-gradient(180deg, transparent $leading-limit, #0cf $leading-limit);
+  background-size: 1px $leading;
+}
+.#{$toggle-classname}::after {
+  z-index: 10010;
+  left: 50%;
+  transform: translateX(-50%);
+  width: $page-width;
+  background: linear-gradient(
+    90deg,
+    transparent  $gutter-width,
+    $column-color  $gutter-width,
+    $column-color  $gutter-width + $column-width,
+    transparent $gutter-width + $column-width
+  );
+  background-size: ($column-width + $gutter-width * 2) 1px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Container Module
+ * 그리드 요소들을 감싸는 블록(Block) 모듈
+ * .container
+ */
+.container {
+  width: $page-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -----------------------------------------------------------------------------
+ * Row Module
+ * 컬럼을 감싸는 로우(행) 모듈
+ * .row
+ */
+.row {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+/* -----------------------------------------------------------------------------
+ * Nesting Row Module
+ * 중첩 로우(행) 모듈
+ * .row.is-nesting
+ */
+  &.is-nesting {
+    & > :first-child { margin-left: 0; }
+    & > :last-child { margin-right: 0; }
+  }
+}
+/*
+ * Isolate Module 
+ * 
+ */
+.is-isolate {
+  & > .col {
+    margin-right: -100%;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Column Module
+ * 컬럼(열) 모듈
+ * .col.is-*
+ *
+ * 컬럼 개수에 따른 폭(width) 구하는 공식
+ * = 컬럼_폭 × 컬럼_개수 + 거터_폭(합) * (컬럼_개수 - 1)
+ * calc( 70px * $i + (10px * 2) * ($i - 1) )
+ */
+.col {
+  float: left;
+  margin-left: $gutter-width;
+  margin-right: $gutter-width;
+}
+
+@for $i from 1 through 12 {
+  .is-#{$i}  { width: column-width($i);   }
+  $offset-width: offset-width($i);
+  .is-offset-#{$i} { 
+    margin-left: $offset-width;
+    // .is-nesting .is-offset-*
+    .is-nesting &:first-child {
+      margin-left: $offset-width - $gutter-width;
+    }  
+  }
+  .is-order-#{$i} {
+    margin-left: $offset-width;
+  }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Offeset Module
+ * 컬럼 핸들링 모듈
+ * .is-offset-*
+ */
+/* -----------------------------------------------------------------------------
+ * Utilities Module
+ * 유틸리티 모듈
+ * .isolate
+ * .hidden
+ * .a11y-hidden (a[ccessibilit]y-hidden)
+ */
+
+%clear-fix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.a11y-hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+
+}
+.hidden {
+  display: none;
+}
+
+@for $i from 1 through 10 {
+  .gap#{$i} {
+    padding-top: $leading * $i;
+  }
+}
+

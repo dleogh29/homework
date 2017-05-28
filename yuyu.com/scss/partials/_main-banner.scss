@@ -1,0 +1,45 @@
+.slide-container {
+    width: $page-width - $gutter-width * 2;
+    height: 100%;
+    overflow: hidden;
+}
+.slide-list {
+    @extend %clear-fix;
+    width: 10 * $page-width;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    [class^="slide"] {
+        float:left;
+        img {
+            display: block;
+            object-fit: contain;
+        }
+    }
+    transition: transform 1s;
+
+}
+
+.carousel-container {
+    text-align: center;
+    line-height: $leading;
+
+    [class^="btn-m-carousel"] {
+        border: 0;
+        padding: 0;
+        width: 8px;
+        height: 0;
+        padding-top: 8px;
+        background: url('../images/icons/carousel.png') no-repeat;
+        background-size: 100% auto;
+        overflow: hidden;
+        vertical-align: middle;
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+        &.selected-carousel {
+            background: url('../images/icons/carousel-active.png') no-repeat;
+            background-size: 100% auto;
+        }
+    }
+}

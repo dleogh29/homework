@@ -1,0 +1,102 @@
+// @import 'settings';
+
+$header-height: $leading * 3;
+$link-color: #991717;
+
+.shortcut-main {
+    position: absolute;
+    left: -9999px;
+    background: #000;
+    color: #fff;
+    padding: 8px 10px;
+
+    &:focus {
+        top: $leading;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+.logo-heading {
+    height: $header-height;
+    margin: 0;
+    img {
+        height: 100%;
+    }
+}
+.search_form {
+    position: relative;
+    height: $header-height;
+    padding: 0 $column-width 0 $column-width;   
+}
+#search_keyword {
+    padding-left: 10px;
+    // line-height: $leading * 2;
+    height: $leading * 2;
+    border: 2px solid #333333;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    // &:-moz-placeholder, &::-moz-placeholder {
+    //     font-family: 'nanumsquareotfbold';
+    // }
+}
+.btn_search {
+    $right-position: $column-width + 10px;
+    position: absolute;
+    right: $right-position;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: url('../images/icons/icons.svg') no-repeat 0 -128px;
+    background-size: 100% auto;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.login-before, .login-after {
+    line-height: $header-height;
+    text-align: right;
+    a {
+        color: $link-color;
+        font-weight: bold;
+    }
+}
+.login-before {
+    .link-login {
+        margin-left: 12px;
+    }
+    a {
+        padding: 5px 10px;
+        &:hover, &:focus {
+            border: 1px solid $link-color;
+        }
+    }
+}
+.login-after {
+    $icon-width: 19px;
+    $icon-height: 19px;
+    .user-basket {
+        margin-left: 30px;
+        background: url('../images/icons/icons.svg') no-repeat 0 ($icon-height * -1);    
+    }
+    .user-alert {
+        margin-left: 5px;
+        background: url('../images/icons/icons.svg') no-repeat 0 ($icon-height * 0);    
+    }
+    .user-basket, .user-alert  {
+        display: inline-block;
+        background-size: 100% auto;
+        width: $icon-width;
+        height: 0;
+        padding-top: $icon-height;
+        // height: $icon-height;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+    
+}

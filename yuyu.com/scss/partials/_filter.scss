@@ -1,0 +1,136 @@
+$filter-base-height: $leading * 2;
+
+// .filter-container {
+//     width: 100%;
+//     min-height: $filter-base-height;
+//     position: absolute;
+//     left: 0;
+//     z-index: 10;
+// }
+
+// .filter {
+//     position: relative;
+//     border-top: 2px solid #bd1d31;
+//     border-bottom: 2px solid #f0f0f0;
+//     background: #f0f0f0;
+//     width: 100%;
+//     height: $leading * 2;
+//     transition: height 0.5s;
+//     overflow: hidden;
+
+//     &.filter-on {
+//         height: $leading * 11;
+//     }
+// }
+
+.filter-container {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: $filter-base-height;
+    border-top: 2px solid #bd1d31;
+    border-bottom: 2px solid #f0f0f0;
+    background: #f0f0f0;
+    transition: height 0.5s;
+    overflow: hidden;
+
+    &.filter-on {
+        height: $leading * 11;
+    }
+}
+
+
+.btn-filter {
+    position: absolute;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #991717;
+    left: 50%;
+    top: $leading - 2px;
+    transform: translateX(-50%) translateY(-50%);
+    border: 0;
+    background: none;
+    cursor: pointer;
+    &::before {
+        content: '';
+        display: inline-block;
+        background: url('../images/icons/icons.svg') no-repeat 0 -42px;
+        background-size: 100% auto;
+        width: 14px;
+        height: 14px;
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+    }
+}
+
+.filter-form {
+    padding-top: $leading * 3 - 2px;
+    width: $page-width;
+    margin: 0 auto;
+    padding-left: $gutter-width;
+}
+
+.filter-age, .filter-style {
+    @extend %clear-fix;
+
+    * {
+        float: left;
+    }
+    h2 {
+        font-family: 'nanumsquareotfregular';
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    [type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+        &:checked + label{
+            background: #bd1d31;
+        }
+    }
+
+    label {
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: $leading;
+        min-width: $column-width;
+        background: #aaaaaa;
+        cursor: pointer;
+        color: #fff;
+        // vertical-align: center;
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+        &:first-of-type {
+            margin-left: 15px;
+        }
+    }
+}
+
+.filter-btn {
+    padding-bottom: $leading;
+    line-height: $leading * 2;
+    text-align: center;
+    button {
+        border: 0;
+        font-family: inherit;
+        color: #fff;
+        padding: 5px 20px;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    .btn-init {
+        background: #aaaaaa;
+    }
+    .btn-complete {
+        background: #bd1d31;
+        margin-left: 5px;
+    }
+}

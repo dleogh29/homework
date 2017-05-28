@@ -1,0 +1,33 @@
+$navigation-height: $leading * 3;
+
+[role="navigation"] {
+    height: $navigation-height;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    $list-border-color: #bd1d31;
+    $list-color: #991717;
+    li {
+        display: inline-block;
+        padding: 5px 15px;
+        margin-top: -5px;
+        cursor: pointer;
+        &:not(:first-child) {
+            margin-left: 12px;
+        }
+        &:hover {
+            color: $list-color;
+            border-bottom: 2px solid $list-border-color;
+            background: none;
+        }
+    }
+    .selected-item {
+        background: $list-border-color;
+        color: #fff;
+
+    }
+}
+

@@ -1,0 +1,90 @@
+.brand-container {
+    h2 {
+        font-size: 2.1rem;
+        line-height: 1;
+        padding-left: $gutter-width;
+        margin: 0;
+    }
+}
+.brand-fixed-container {
+    width: $page-width;
+    overflow: hidden;
+}
+
+.brand-list {
+    @extend %clear-fix;
+    width: (250px + $gutter-width * 2) * 8;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+    padding-top: $leading;
+    transition: transform 1s;
+
+    img {
+        display: block;
+    }
+    a {
+        display: block;
+        position: relative;
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     left: 50%;
+        //     top: 50%;
+        //     transform: translateX(-50%) translateY(-50%);
+        //     font-family: "nanumsquareotfextrabold";
+        //     font-size: 2.7rem;
+        //     color: #fff;
+        //     text-shadow: 0 0 5px #000;
+        // }
+        &>span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            font-family: "nanumsquareotfextrabold";
+            font-size: 2.7rem;
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+        }
+    }
+    div {
+        position: absolute;
+        width: 100%;
+        height: $leading;
+        bottom: 0;
+        background: rgba(129, 129, 129, 0.5);
+        color: #fff;
+        padding: 0 10px;
+        form {
+            float: right;
+        }
+    }
+}
+
+.brand-btn-container {
+    $btn-top-position: -($leading * 7);
+    $btn-height: $leading * 7;
+    position: relative;
+    background: red;
+
+    .btn-prev-brand, .btn-next-brand {
+        position: absolute;
+        top: $btn-top-position;
+        height: $btn-height;
+        text-align: center;
+        padding: 0;
+        color: #bd1d31;
+        font-family: inherit;
+        font-size: 2rem;
+        background: #f0f0f0;
+        border: 1px solid #dddddd;
+        cursor: pointer;
+    }
+    .btn-prev-brand {
+        left: -$leading;
+    }
+    .btn-next-brand {
+        right: -$leading;
+    }
+}
