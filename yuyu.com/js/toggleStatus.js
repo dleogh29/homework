@@ -67,8 +67,9 @@ function initFilter() {
 }
 
 function showCarouselSlide(i) {
-  var slideWidth = 1060;
-  doc.getElementById('slide-list').style.transform = "translateX(-" + slideWidth * i + "px)";
+  var slide_list = doc.getElementById('slide-list');
+  var slide_width = slide_list.getElementsByTagName('li')[0].offsetWidth;
+  slide_list.style.transform = "translateX(-" + slide_width * i + "px)";
   this.classList.toggle('selected-carousel');
   prev_selected_carousel.classList.toggle('selected-carousel');
   prev_selected_carousel = btn_carousel_array[i];

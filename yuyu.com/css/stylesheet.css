@@ -757,7 +757,7 @@ fieldset {
   background-size: 100% auto;
 }
 
-.bestseller-container h2 {
+.bestseller-heading {
   font-size: 2.1rem;
   line-height: 1;
   padding-left: 10px;
@@ -771,12 +771,18 @@ fieldset {
   padding-top: 21px;
 }
 
+.bestseller-list li {
+  position: relative;
+}
+
 .bestseller-list img {
   display: block;
 }
 
 .bestseller-list form {
-  float: right;
+  position: absolute;
+  right: 21px;
+  bottom: 21px;
 }
 
 .bestseller-list a {
@@ -813,14 +819,14 @@ fieldset {
   color: #991717;
 }
 
-.brand-container h2 {
+.brand-heading {
   font-size: 2.1rem;
   line-height: 1;
   padding-left: 10px;
   margin: 0;
 }
 
-.brand-fixed-container {
+.brand-container {
   width: 1080px;
   overflow: hidden;
 }
@@ -832,6 +838,10 @@ fieldset {
   list-style-type: none;
   padding-top: 21px;
   transition: transform 1s;
+}
+
+.brand-list li {
+  position: relative;
 }
 
 .brand-list img {
@@ -854,7 +864,7 @@ fieldset {
   text-shadow: 0 0 5px #000;
 }
 
-.brand-list div {
+.brand-list form {
   position: absolute;
   width: 100%;
   height: 21px;
@@ -864,8 +874,11 @@ fieldset {
   padding: 0 10px;
 }
 
-.brand-list div form {
-  float: right;
+.brand-list form button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .brand-btn-container {
