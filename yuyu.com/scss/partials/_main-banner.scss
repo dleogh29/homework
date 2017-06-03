@@ -1,15 +1,17 @@
-.slide-container {
+.carousel-slide-container {
     width: $page-width - $gutter-width * 2;
     height: 100%;
     overflow: hidden;
+    position: relative;
+    padding-bottom: 2 * $leading;
 }
-.slide-list {
+.carousel-slide-list {
     @extend %clear-fix;
     width: 10 * $page-width;
     list-style-type: none;
     margin: 0;
     padding-left: 0;
-    [class^="slide"] {
+    [class^="carousel-slide"] {
         float:left;
         img {
             display: block;
@@ -20,11 +22,25 @@
 
 }
 
-.carousel-container {
+.carousel-tablist {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
     text-align: center;
     line-height: $leading;
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
 
-    [class^="btn-m-carousel"] {
+    li {
+        display: inline-block;
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+    }
+
+    [class^="carousel-tab"] {
         border: 0;
         padding: 0;
         width: 8px;
@@ -34,13 +50,14 @@
         background-size: 100% auto;
         overflow: hidden;
         vertical-align: middle;
-        &:not(:first-child) {
-            margin-left: 8px;
-        }
-        &.selected-carousel {
+        cursor: pointer;
+        &.selected {
             background: url('../images/icons/carousel-active.png') no-repeat;
             background-size: 100% auto;
-            
+        }
+        &:focus {
+            border: 1px solid red;
         }
     }
+
 }

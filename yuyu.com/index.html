@@ -43,18 +43,18 @@
       <div class="col is-12">
         <h2 class="a11y-hidden">메인 카테고리 메뉴</h2>
         <ul class="menu-list">
-          <li><a class="selected-item">MAIN</a></li>
-          <li><a>BRAND</a></li>
-          <li><a>SPECIAL</a></li>
-          <li><a>OUTER</a></li>
-          <li><a>TOPS</a></li>
-          <li><a>BOTTOM</a></li>
-          <li><a>DRESS</a></li>
-          <li><a>SHOES</a></li>
-          <li><a>BAG</a></li>
-          <li><a>ACC</a></li>
-          <li><a>SUMMER</a></li>
-          <li><a>ETC</a></li>
+          <li><a href="" class="selected-item">MAIN</a></li>
+          <li><a href="">BRAND</a></li>
+          <li><a href="">SPECIAL</a></li>
+          <li><a href="">OUTER</a></li>
+          <li><a href="">TOPS</a></li>
+          <li><a href="">BOTTOM</a></li>
+          <li><a href="">DRESS</a></li>
+          <li><a href="">SHOES</a></li>
+          <li><a href="">BAG</a></li>
+          <li><a href="">ACC</a></li>
+          <li><a href="">SUMMER</a></li>
+          <li><a href="">ETC</a></li>
         </ul>
       </div>
     </div>
@@ -107,55 +107,125 @@
     </div>
     <div class="row gap4">
       <div class="col is-12">
-        <div class="slide-container">
-          <h2 class="a11y-hidden">메인 배너 슬라이드</h2>
-          <ul id="slide-list" class="slide-list">
-            <li class="slide1">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide2">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide3">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide4">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide5">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide6">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide7">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide8">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide9">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-            <li class="slide10">
-              <img src="images/banner/banner-01.jpg" alt="">
-            </li>
-          </ul>
+        <div role="region" aria-labelledby="carousel-heading">
+          <h2 id="carousel-heading" class="a11y-hidden">yuyu.com 할인/특가 상품</h2>
+          <div class="carousel-slide-container">
+            <ol role="tablist" class="carousel-tablist gap1">
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab1" class="carousel-tab selected"
+                          aria-controls="carousel-slide1" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab2" class="carousel-tab"
+                          aria-controls="carousel-slide2" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab3" class="carousel-tab"
+                          aria-controls="carousel-slide3" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab4" class="carousel-tab"
+                          aria-controls="carousel-slide4" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab5" class="carousel-tab"
+                          aria-controls="carousel-slide5" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab6" class="carousel-tab"
+                          aria-controls="carousel-slide6" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab7" class="carousel-tab"
+                          aria-controls="carousel-slide7" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab8" class="carousel-tab"
+                          aria-controls="carousel-slide8" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab9" class="carousel-tab" 
+                          aria-controls="carousel-slide9" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+              <li role="presentation">
+                  <button role="tab" id="carousel-tab10" class="carousel-tab" 
+                          aria-controls="carousel-slide10" type="button">
+                    <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+                  </button>
+              </li>
+            </ol>
+            <ol id="carousel-slide-list" class="carousel-slide-list">
+              <li id="carousel-slide1" class="carousel-slide1" aria-labelledby="carousel-tab1">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide2" class="carousel-slide2" aria-labelledby="carousel-tab2">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide3" class="carousel-slide3" aria-labelledby="carousel-tab3">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide4" class="carousel-slide4" aria-labelledby="carousel-tab4">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide5" class="carousel-slide5" aria-labelledby="carousel-tab5">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide6" class="carousel-slide6" aria-labelledby="carousel-tab6">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide7" class="carousel-slide7" aria-labelledby="carousel-tab7">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide8" class="carousel-slide8" aria-labelledby="carousel-tab8">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide9" class="carousel-slide9" aria-labelledby="carousel-tab9">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+              <li id="carousel-slide10" class="carousel-slide10" aria-labelledby="carousel-tab10">
+                <a href="#">
+                  <img src="images/banner/banner-01.jpg" alt="">
+                </a>
+              </li>
+            </ol>
+          </div>
         </div>
-        <div class="carousel-container gap1">
-          <h2 class="a11y-hidden">메인 배너 슬라이드 캐러셀</h2>
-          <button class="btn-m-carousel selected-carousel" type="button">1번 배너</button>
-          <button class="btn-m-carousel" type="button">2번 배너</button>
-          <button class="btn-m-carousel" type="button">3번 배너</button>
-          <button class="btn-m-carousel" type="button">4번 배너</button>
-          <button class="btn-m-carousel" type="button">5번 배너</button>
-          <button class="btn-m-carousel" type="button">6번 배너</button>
-          <button class="btn-m-carousel" type="button">7번 배너</button>
-          <button class="btn-m-carousel" type="button">8번 배너</button>
-          <button class="btn-m-carousel" type="button">9번 배너</button>
-          <button class="btn-m-carousel" type="button">10번 배너</button>
-        </div>
-        
       </div>
     </div>
     <div class="row gap2">
@@ -348,7 +418,17 @@
       </ul>
     </div>
     <div class="row gap2">
-      
+      <h2 class="tip-heading">언니의 팁</h2>
+      <!--<div class="carousel-slide-container">
+        <ol role="tablist" class="carousel-tablist gap1">
+          <li role="presentation">
+              <button role="tab" id="carousel-tab1" class="carousel-tab selected"
+                      aria-controls="carousel-slide1" type="button">
+                <span class="a11y-hidden">캐러셀 콘텐츠 제목</span>
+              </button>
+          </li>
+        </ol>
+      </div>-->
     </div>
   </div>
 

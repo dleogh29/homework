@@ -384,7 +384,7 @@ fieldset {
  * .hidden
  * .a11y-hidden (a[ccessibilit]y-hidden)
  */
-.filter-age::after, .filter-style::after, .slide-list::after, .bestseller-list::after, .bestseller-list a::after, .brand-list::after {
+.filter-age::after, .filter-style::after, .carousel-slide-list::after, .bestseller-list::after, .bestseller-list a::after, .brand-list::after {
   content: '';
   display: block;
   clear: both;
@@ -708,13 +708,15 @@ fieldset {
   margin-left: 5px;
 }
 
-.slide-container {
+.carousel-slide-container {
   width: 1060px;
   height: 100%;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 42px;
 }
 
-.slide-list {
+.carousel-slide-list {
   width: 10800px;
   list-style-type: none;
   margin: 0;
@@ -722,21 +724,36 @@ fieldset {
   transition: transform 1s;
 }
 
-.slide-list [class^="slide"] {
+.carousel-slide-list [class^="carousel-slide"] {
   float: left;
 }
 
-.slide-list [class^="slide"] img {
+.carousel-slide-list [class^="carousel-slide"] img {
   display: block;
   object-fit: contain;
 }
 
-.carousel-container {
+.carousel-tablist {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
   text-align: center;
   line-height: 21px;
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
-.carousel-container [class^="btn-m-carousel"] {
+.carousel-tablist li {
+  display: inline-block;
+}
+
+.carousel-tablist li:not(:first-child) {
+  margin-left: 8px;
+}
+
+.carousel-tablist [class^="carousel-tab"] {
   border: 0;
   padding: 0;
   width: 8px;
@@ -746,15 +763,16 @@ fieldset {
   background-size: 100% auto;
   overflow: hidden;
   vertical-align: middle;
+  cursor: pointer;
 }
 
-.carousel-container [class^="btn-m-carousel"]:not(:first-child) {
-  margin-left: 8px;
-}
-
-.carousel-container [class^="btn-m-carousel"].selected-carousel {
+.carousel-tablist [class^="carousel-tab"].selected {
   background: url("../images/icons/carousel-active.png") no-repeat;
   background-size: 100% auto;
+}
+
+.carousel-tablist [class^="carousel-tab"]:focus {
+  border: 1px solid red;
 }
 
 .bestseller-heading {
