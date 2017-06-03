@@ -21,7 +21,7 @@ function init() {
   doc.getElementById('btn-init').addEventListener('click', initFilter);
 
   // 캐러셀 버튼 listener
-  btn_carousel_array = doc.getElementsByClassName('btn-m-carousel');
+  btn_carousel_array = doc.getElementsByClassName('carousel-tab');
   for(var i = 0; i < btn_carousel_array.length; i++) {
     btn_carousel_array[i].addEventListener("click", showCarouselSlide.bind(btn_carousel_array[i], i));
   }
@@ -68,9 +68,9 @@ function initFilter() {
 
 function showCarouselSlide(i) {
   var slideWidth = 1060;
-  doc.getElementById('slide-list').style.transform = "translateX(-" + slideWidth * i + "px)";
-  this.classList.toggle('selected-carousel');
-  prev_selected_carousel.classList.toggle('selected-carousel');
+  doc.getElementById('carousel-slide-list').style.transform = "translateX(-" + slideWidth * i + "px)";
+  this.classList.toggle('selected');
+  prev_selected_carousel.classList.toggle('selected');
   prev_selected_carousel = btn_carousel_array[i];
 }
 

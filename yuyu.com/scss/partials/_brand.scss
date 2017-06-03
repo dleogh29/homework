@@ -1,12 +1,10 @@
-.brand-container {
-    h2 {
-        font-size: 2.1rem;
-        line-height: 1;
-        padding-left: $gutter-width;
-        margin: 0;
-    }
+.brand-heading {
+    font-size: 2.1rem;
+    line-height: 1;
+    padding-left: $gutter-width;
+    margin: 0;
 }
-.brand-fixed-container {
+.brand-container {
     width: $page-width;
     overflow: hidden;
 }
@@ -20,6 +18,9 @@
     padding-top: $leading;
     transition: transform 1s;
 
+    li {
+        position: relative;
+    }
     img {
         display: block;
     }
@@ -48,7 +49,7 @@
             text-shadow: 0 0 5px #000;
         }
     }
-    div {
+    form {
         position: absolute;
         width: 100%;
         height: $leading;
@@ -56,8 +57,11 @@
         background: rgba(129, 129, 129, 0.5);
         color: #fff;
         padding: 0 10px;
-        form {
-            float: right;
+        button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }
