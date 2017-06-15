@@ -1,0 +1,68 @@
+.mailbox-header {
+    height: $leading * 3;
+}
+
+.compose {
+    position: relative;
+    display: block;
+    background-color: #1875f0;
+    color: #fff;
+    width: 80%;
+    height: 60%;
+    border-radius: 5px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    line-height: $leading * 3 * 0.6;
+}
+
+.mail-form {
+    padding-top: $leading;
+    line-height: $leading;
+    button {
+        height: 0;
+        border: 0;
+        vertical-align: middle;
+        overflow: hidden;
+        &:nth-child(n+3) {
+            margin-left: 25px;
+        }
+    }
+}
+
+.btn-arrow {
+    width: 10px;
+    padding-top: 6px;
+    background: url('../images/icons.png') no-repeat 0 -297.0000042915344px;   
+}
+.btn-refresh {
+    width: 16px;
+    padding-top: 16px;
+    background: url('../images/icons.png') no-repeat 0 -121px;
+}
+.btn-archive {
+    width: 18px;
+    padding-top: 18px;
+    background: url('../images/icons.png') no-repeat 0 -276.0000042915344px;
+}
+.btn-spam {
+    width: 18px;
+    padding-top: 18px;
+    background: url('../images/icons.png') no-repeat 0 -40px;
+}
+.btn-delete {
+    width: 14px;
+    padding-top: 18px;
+    background: url('../images/icons.png') no-repeat 0 -211px;
+}
+.btn-folder {
+    width: 20px;
+    padding-top: 16px;
+    background: url('../images/icons.png') no-repeat 0 -173px;
+}
+.btn-label {
+    width: 19px;
+    padding-top: 14px;
+    background: url('../images/icons.png') no-repeat 0 -139px;
+}

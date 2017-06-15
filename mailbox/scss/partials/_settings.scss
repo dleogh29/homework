@@ -1,0 +1,64 @@
+/* -----------------------------------------------------------------------------
+ * 설계(Design)
+ *
+ * $base-font-size  : 14px
+ * $leading : 30px
+ * $column-width : 68px
+ * $columns : 12
+ * $gutter-width : 15px
+ * $gutter-position : split
+ * $container-width : (68 + (15*2)) * 12 = 1176px
+ * --------------------------------------------------------------------------- */
+
+$base-font-size  : 14px;
+
+$leading: 30px;
+
+$leading-scale: $leading / $base-font-size;
+
+$column-width: 68px;
+
+$column: 12;
+
+$row-height: 30px;
+
+$gutter-width: 15px;
+
+$gutter-direction: 'split';
+
+$container-width: 1176px;
+
+$base-color: #666666;
+
+$column-color: rgba(#fb8989, 0.35);
+
+
+.a11y-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+%clear-fix {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+@function column-width($i) {
+    @return ($column-width + 2 * $gutter-width) * $i - (2 * $gutter-width);
+}
+
+@function offset-width($i) {
+    @return column-width($i) + (3 * $gutter-width);
+}
+
+@function order-width($i) {
+    @return offset-width($i) - offset-width(1) + $gutter-width;
+}

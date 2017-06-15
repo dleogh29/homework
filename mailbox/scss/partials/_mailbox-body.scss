@@ -1,0 +1,111 @@
+.mail-table {
+    $table-border: 1px solid gray;
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        height: $leading * 2;
+        border: $table-border;
+    }
+    td {
+        padding: 0 10px;
+        &:nth-child(1) {
+            padding-left: 20px;
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(7) {
+            text-align: center;
+        }
+    }
+}
+button.btn-check {
+    width: 20px;
+    height: 0;
+    padding-top: 20px;
+    border: 1px solid #cccccc;
+    background: none;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+        border: 0;
+        background: #1875f0;
+    }
+
+    &.active {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '✓';
+            color: #fff;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        border: 0;
+        background: #1875f0;
+    }
+}
+.btn-star {
+	width: 20px;
+	height: 0;
+    padding-top: 19px;
+    border: 0;
+    background: url('../images/icons.png') no-repeat;
+    background-position: 0 -19.998104095458984px;
+    overflow: hidden;
+    vertical-align: middle;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &.active {
+        background-position: 0 0;
+        
+    }
+}
+
+.mail-label {
+    display: inline-block;
+    width: 8px;
+    height: 0;
+    padding-top: 8px;
+    overflow: hidden;
+    vertical-align: middle;
+    clip-path: circle(4px at 4px 4px);
+
+    &.project {
+        background: #f5a623;
+    }
+    &.web {
+        background: #f44336;
+    }
+    &.home {
+        background: #bd10e0;
+    }
+    &.work {
+        background: #2096f3;
+    }
+}
+
+.img-sender {
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    overflow: hidden;
+    vertical-align: middle;
+    clip-path: circle(18px at 18px 18px);
+}
+
+.mail-clip {
+    display: inline-block;
+	width: 20px;
+	height: 0;
+	padding-top: 11px;
+    overflow: hidden;
+    vertical-align: middle;
+    background: url('../images/icons.png') no-repeat;
+    background-position: 0 -231.00000429153442px ;
+
+}

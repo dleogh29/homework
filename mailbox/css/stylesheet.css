@@ -1,0 +1,464 @@
+@charset "UTF-8";
+/* -----------------------------------------------------------------------------
+ * 설계(Design)
+ *
+ * $base-font-size  : 14px
+ * $leading : 30px
+ * $column-width : 68px
+ * $columns : 12
+ * $gutter-width : 15px
+ * $gutter-position : split
+ * $container-width : (68 + (15*2)) * 12 = 1176px
+ * --------------------------------------------------------------------------- */
+/* line 36, scss/partials/_settings.scss */
+.a11y-hidden, legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden; }
+
+/* line 47, scss/partials/_settings.scss */
+.row::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* line 1, scss/partials/_init.scss */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  font-size: 10px; }
+
+/* line 7, scss/partials/_init.scss */
+body {
+  margin: 0;
+  font-size: 1.4rem;
+  /* 14px */
+  line-height: 2.14286;
+  /* 30px */
+  color: #666666; }
+
+/* line 15, scss/partials/_init.scss */
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/* line 20, scss/partials/_init.scss */
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/* line 26, scss/partials/_init.scss */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/* line 36, scss/partials/_init.scss */
+button {
+  padding: 0; }
+
+/* line 3, scss/partials/_grid.scss */
+.grid::before, .grid::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+/* line 11, scss/partials/_grid.scss */
+.grid::before {
+  background: linear-gradient(90deg, transparent 15px, rgba(251, 137, 137, 0.35) 15px, rgba(251, 137, 137, 0.35) 83px, transparent 83px);
+  background-size: 98px 1px; }
+
+/* line 22, scss/partials/_grid.scss */
+.grid::after {
+  background: linear-gradient(180deg, transparent 29px, rgba(251, 137, 137, 0.35) 30px);
+  background-size: 1px 30px; }
+
+/* line 32, scss/partials/_grid.scss */
+.container {
+  position: relative;
+  width: 1176px;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px; }
+
+/* line 41, scss/partials/_grid.scss */
+.row {
+  min-height: 30px; }
+  /* line 46, scss/partials/_grid.scss */
+  .row.isolate > .col {
+    margin-right: -100%; }
+
+/* line 52, scss/partials/_grid.scss */
+.col {
+  float: left;
+  margin: 0 15px;
+  height: 100%; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-1 {
+  width: 68px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-1 {
+  margin-left: 113px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-1 {
+  margin-left: 15px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-2 {
+  width: 166px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-2 {
+  margin-left: 211px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-2 {
+  margin-left: 113px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-3 {
+  width: 264px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-3 {
+  margin-left: 309px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-3 {
+  margin-left: 211px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-4 {
+  width: 362px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-4 {
+  margin-left: 407px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-4 {
+  margin-left: 309px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-5 {
+  width: 460px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-5 {
+  margin-left: 505px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-5 {
+  margin-left: 407px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-6 {
+  width: 558px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-6 {
+  margin-left: 603px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-6 {
+  margin-left: 505px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-7 {
+  width: 656px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-7 {
+  margin-left: 701px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-7 {
+  margin-left: 603px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-8 {
+  width: 754px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-8 {
+  margin-left: 799px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-8 {
+  margin-left: 701px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-9 {
+  width: 852px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-9 {
+  margin-left: 897px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-9 {
+  margin-left: 799px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-10 {
+  width: 950px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-10 {
+  margin-left: 995px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-10 {
+  margin-left: 897px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-11 {
+  width: 1048px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-11 {
+  margin-left: 1093px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-11 {
+  margin-left: 995px; }
+
+/* line 60, scss/partials/_grid.scss */
+.col-12 {
+  width: 1146px; }
+
+/* line 63, scss/partials/_grid.scss */
+.offset-12 {
+  margin-left: 1191px; }
+
+/* line 66, scss/partials/_grid.scss */
+.order-12 {
+  margin-left: 1093px; }
+
+/* line 72, scss/partials/_grid.scss */
+.v-t-pad-1 {
+  padding-top: 30px; }
+
+/* line 72, scss/partials/_grid.scss */
+.v-t-pad-2 {
+  padding-top: 60px; }
+
+/* line 72, scss/partials/_grid.scss */
+.v-t-pad-3 {
+  padding-top: 90px; }
+
+/* line 72, scss/partials/_grid.scss */
+.v-t-pad-4 {
+  padding-top: 120px; }
+
+/* line 72, scss/partials/_grid.scss */
+.v-t-pad-5 {
+  padding-top: 150px; }
+
+/* line 1, scss/partials/_navigator.scss */
+.navigator {
+  padding-left: 20px; }
+
+/* line 1, scss/partials/_title.scss */
+.title {
+  height: 60px; }
+
+/* line 5, scss/partials/_title.scss */
+.title-heading {
+  font-size: 36px;
+  line-height: 1;
+  margin: 0 0 0 20px; }
+
+/* line 1, scss/partials/_mailbox-header.scss */
+.mailbox-header {
+  height: 90px; }
+
+/* line 5, scss/partials/_mailbox-header.scss */
+.compose {
+  position: relative;
+  display: block;
+  background-color: #1875f0;
+  color: #fff;
+  width: 80%;
+  height: 60%;
+  border-radius: 5px;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 54px; }
+
+/* line 20, scss/partials/_mailbox-header.scss */
+.mail-form {
+  padding-top: 30px;
+  line-height: 30px; }
+  /* line 23, scss/partials/_mailbox-header.scss */
+  .mail-form button {
+    height: 0;
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden; }
+    /* line 28, scss/partials/_mailbox-header.scss */
+    .mail-form button:nth-child(n+3) {
+      margin-left: 25px; }
+
+/* line 34, scss/partials/_mailbox-header.scss */
+.btn-arrow {
+  width: 10px;
+  padding-top: 6px;
+  background: url("../images/icons.png") no-repeat 0 -297.0px; }
+
+/* line 39, scss/partials/_mailbox-header.scss */
+.btn-refresh {
+  width: 16px;
+  padding-top: 16px;
+  background: url("../images/icons.png") no-repeat 0 -121px; }
+
+/* line 44, scss/partials/_mailbox-header.scss */
+.btn-archive {
+  width: 18px;
+  padding-top: 18px;
+  background: url("../images/icons.png") no-repeat 0 -276.0px; }
+
+/* line 49, scss/partials/_mailbox-header.scss */
+.btn-spam {
+  width: 18px;
+  padding-top: 18px;
+  background: url("../images/icons.png") no-repeat 0 -40px; }
+
+/* line 54, scss/partials/_mailbox-header.scss */
+.btn-delete {
+  width: 14px;
+  padding-top: 18px;
+  background: url("../images/icons.png") no-repeat 0 -211px; }
+
+/* line 59, scss/partials/_mailbox-header.scss */
+.btn-folder {
+  width: 20px;
+  padding-top: 16px;
+  background: url("../images/icons.png") no-repeat 0 -173px; }
+
+/* line 64, scss/partials/_mailbox-header.scss */
+.btn-label {
+  width: 19px;
+  padding-top: 14px;
+  background: url("../images/icons.png") no-repeat 0 -139px; }
+
+/* line 1, scss/partials/_mailbox-body.scss */
+.mail-table {
+  width: 100%;
+  border-collapse: collapse; }
+  /* line 6, scss/partials/_mailbox-body.scss */
+  .mail-table tr {
+    height: 60px;
+    border: 1px solid gray; }
+  /* line 10, scss/partials/_mailbox-body.scss */
+  .mail-table td {
+    padding: 0 10px; }
+    /* line 12, scss/partials/_mailbox-body.scss */
+    .mail-table td:nth-child(1) {
+      padding-left: 20px; }
+    /* line 15, scss/partials/_mailbox-body.scss */
+    .mail-table td:nth-child(1), .mail-table td:nth-child(2), .mail-table td:nth-child(3), .mail-table td:nth-child(4), .mail-table td:nth-child(7) {
+      text-align: center; }
+
+/* line 20, scss/partials/_mailbox-body.scss */
+button.btn-check {
+  width: 20px;
+  height: 0;
+  padding-top: 20px;
+  border: 1px solid #cccccc;
+  background: none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 5px; }
+  /* line 30, scss/partials/_mailbox-body.scss */
+  button.btn-check:hover {
+    cursor: pointer;
+    border: 0;
+    background: #1875f0; }
+  /* line 36, scss/partials/_mailbox-body.scss */
+  button.btn-check.active {
+    position: relative;
+    border: 0;
+    background: #1875f0; }
+    /* line 38, scss/partials/_mailbox-body.scss */
+    button.btn-check.active::before {
+      position: absolute;
+      content: '✓';
+      color: #fff;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%); }
+
+/* line 50, scss/partials/_mailbox-body.scss */
+.btn-star {
+  width: 20px;
+  height: 0;
+  padding-top: 19px;
+  border: 0;
+  background: url("../images/icons.png") no-repeat;
+  background-position: 0 -19.998104095458984px;
+  overflow: hidden;
+  vertical-align: middle; }
+  /* line 60, scss/partials/_mailbox-body.scss */
+  .btn-star:hover {
+    cursor: pointer; }
+  /* line 63, scss/partials/_mailbox-body.scss */
+  .btn-star.active {
+    background-position: 0 0; }
+
+/* line 69, scss/partials/_mailbox-body.scss */
+.mail-label {
+  display: inline-block;
+  width: 8px;
+  height: 0;
+  padding-top: 8px;
+  overflow: hidden;
+  vertical-align: middle;
+  clip-path: circle(4px at 4px 4px); }
+  /* line 78, scss/partials/_mailbox-body.scss */
+  .mail-label.project {
+    background: #f5a623; }
+  /* line 81, scss/partials/_mailbox-body.scss */
+  .mail-label.web {
+    background: #f44336; }
+  /* line 84, scss/partials/_mailbox-body.scss */
+  .mail-label.home {
+    background: #bd10e0; }
+  /* line 87, scss/partials/_mailbox-body.scss */
+  .mail-label.work {
+    background: #2096f3; }
+
+/* line 92, scss/partials/_mailbox-body.scss */
+.img-sender {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  overflow: hidden;
+  vertical-align: middle;
+  clip-path: circle(18px at 18px 18px); }
+
+/* line 101, scss/partials/_mailbox-body.scss */
+.mail-clip {
+  display: inline-block;
+  width: 20px;
+  height: 0;
+  padding-top: 11px;
+  overflow: hidden;
+  vertical-align: middle;
+  background: url("../images/icons.png") no-repeat;
+  background-position: 0 -231.00000429153442px; }
+
+/*# sourceMappingURL=map/stylesheet.css.map */
