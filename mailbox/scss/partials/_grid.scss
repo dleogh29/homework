@@ -1,0 +1,75 @@
+
+.grid {
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    &::before {
+        background: linear-gradient(
+            90deg,
+            transparent $gutter-width,
+            $column-color $gutter-width,
+            $column-color $column-width + $gutter-width,
+            transparent $column-width + $gutter-width
+        );
+        background-size: ($column-width + $gutter-width * 2) 1px;
+    }
+
+    &::after {
+        background: linear-gradient(
+            180deg,
+            transparent $leading - 1,
+            $column-color $leading
+        );
+        background-size: 1px $leading;
+    }
+}
+
+.container {
+    position: relative;
+    width: $container_width;
+    height: 100%;
+    margin: 0 auto;
+    // background: skyblue;
+    margin-bottom: 20px;
+}
+
+.row {
+    @extend %clear-fix;
+    min-height: $leading;
+    
+    &.isolate {
+        &>.col {
+            margin-right: -100%;
+        }
+    }
+}
+
+.col {
+    float: left;
+    margin: 0 $gutter-width;
+    height: 100%;
+    // background: red;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: column-width($i);
+    }
+    .offset-#{$i} {
+        margin-left: offset-width($i);
+    }
+    .order-#{$i} {
+        margin-left: order-width($i);
+    }
+}
+
+@for $i from 1 through 5 {
+    .v-t-pad-#{$i} {
+        padding-top: $leading * $i;
+    }
+}

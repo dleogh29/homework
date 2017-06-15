@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "compile": "node-sass scss/stylesheet.scss -o css --source-map css/map",
+        "watch": "npm run compile -- -whatch"
+    },
+    "devDependencies": {
+        "node-sass": "^4.5.3"
+    }
+}

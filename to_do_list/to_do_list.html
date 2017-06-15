@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do list</title>
+    <link rel="stylesheet" type="text/css" href="to_do_list.css">
+    <script src="lib/FDS.js"></script>
+</head>
+<body>
+
+    <!--
+        to do list
+        text
+        add
+        delete
+        list
+    -->
+    <div class="tdl-container">
+        <h2 class="tdl-heading">To Do List</h2>
+        <form class="tdl-form" action="javascript:console.log('')" >
+            <div class="tdl-input-wrapper">
+                <input class="tdl-text" id="tdl-text" type="text" name="tdl-text" placeholder="please enter things to do">
+                <label class="a11y-hidden" for="tdl-text">할 일</label>
+                <button class="btn-tdl-add" type="submit">추가</button>
+            </div>
+
+            <span class="alert-message"></span>
+
+            <ul class="tdl-list">
+                <!--<li class="tdl-list-item">
+                    <input class="a11y-hidden" type="checkbox" name="tdl-registerd" id="tdl-registerd">
+                    <label class="tdl-check-label" for="tdl-registerd">은행가기</label>
+                    <button class="btn-tdl-del" type="submit">삭제</button>
+                </li>-->
+            </ul>
+            
+            <button class="btn-del-selected" type="submit">선택 목록 삭제</button>
+        </form>
+    </div>
+
+    <script src="to_do_list.js"></script>
+    
+</body>
+</html>
