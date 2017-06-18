@@ -18,6 +18,7 @@
 
     
     btn_tdl_add.onclick = tdlAddClickHandler;
+    btn_del_selected.onclick = delSelectedClickHandler;
 
     function tdlAddClickHandler() {
 
