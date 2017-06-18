@@ -9,6 +9,7 @@ html {
 
 body {
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.8rem;
     line-height: 1.5;
     background: skyblue;
@@ -38,17 +39,25 @@ body {
 
 .tdl-text, .tdl-check-label {
     display: inline-block;
+    font-family: inherit;
     font-size: inherit;
     line-height: 2;
+    vertical-align: middle;
     border: 0;
     border-radius: 3px;
     background: #fff;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     padding-left: 10px;
+    padding-right: 50px;
     width: 100%;
+    min-height: calc(1.8rem * 2);
 }
 
-.btn-tdl-add, .btn-tdl-del {
+.tdl-text.edit {
+    padding-right: 100px;
+}
+
+.btn-tdl-add, .btn-tdl-del, .btn-tdl-confirm, .btn-tdl-cancel {
     position: absolute;
     top: 50%;
     right: 0;
@@ -60,12 +69,25 @@ body {
     padding-top: calc(1.8rem * 1.7);
     height: 0;
     border: 0;
-    /*circle(4px at 4px 4px);*/
-    clip-path: circle(calc(1.8rem * 1.7/ 2) at calc(1.8rem * 1.7 / 2) calc(1.8rem * 1.7/ 2));
+    /*clip-path: circle(calc(1.8rem * 1.7/ 2) at calc(1.8rem * 1.7 / 2) calc(1.8rem * 1.7/ 2));*/
+    border-radius: 100px;
     background: #d1cfcf;
     overflow: hidden;
     cursor: pointer;
 }
+
+.edit-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.btn-tdl-confirm {
+    right: calc(1.8rem * 1.7 + 5px);
+}
+
 .btn-tdl-del {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
@@ -73,14 +95,18 @@ body {
 .btn-tdl-del.active, .btn-tdl-del:focus {
     opacity: 1;
 }
-.btn-tdl-add:focus, .btn-tdl-del:focus {
+.btn-tdl-add:focus, .btn-tdl-del:focus,
+.btn-tdl-confirm:focus, .btn-tdl-cancel:focus {
     outline: none;
 }
 .btn-tdl-add:focus::before, .btn-tdl-del:focus::before,
-.btn-tdl-add:hover::before, .btn-tdl-del:hover::before{
+.btn-tdl-add:hover::before, .btn-tdl-del:hover::before,
+.btn-tdl-confirm:focus::before, .btn-tdl-cancel:focus::before,
+.btn-tdl-confirm:hover::before, .btn-tdl-cancel:hover::before{
     color: #000;
 }
-.btn-tdl-add::before, .btn-tdl-del::before {
+.btn-tdl-add::before, .btn-tdl-del::before,
+.btn-tdl-confirm::before, .btn-tdl-cancel::before {
     position: absolute;
     content: '+';
     font-size: 3rem;
@@ -90,11 +116,24 @@ body {
     text-align: center;
     width: 100%;
     height: 100%;
+    line-height: 1.1;
+
 }
 
 .btn-tdl-del::before {
     top: 7px;
     content: '‾';
+}
+
+.btn-tdl-confirm::before {
+    font-size: inherit;
+    line-height: 1.7;
+    content: 'O';
+}
+.btn-tdl-cancel::before {
+    font-size: inherit;
+    line-height: 1.7;
+    content: 'X';
 }
 
 .alert-message {
@@ -121,6 +160,7 @@ body {
 .tdl-list-item {
     position: relative;
     margin: 10px 0;
+    height: auto;
 }
 
 .tdl-list-item [type="checkbox"]:checked+label {
@@ -151,6 +191,6 @@ body {
     position: absolute;
 }
 
-.alert-container {
+/*.alert-container {
     position
-}
+}*/

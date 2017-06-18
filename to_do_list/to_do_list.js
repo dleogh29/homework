@@ -18,16 +18,15 @@
 
     
     btn_tdl_add.onclick = tdlAddClickHandler;
-    btn_del_selected.onclick = delSelectedClickHandler;
 
     function tdlAddClickHandler() {
 
-        var tdl_text_value = tdl_text.value;
+        var tdl_text_value = tdl_text.value.trim();
+        tdl_text.value = '';
         if(!tdl_text_value) {
             alertMessage('입력란에 내용을 작성하세요.');
             return;
         }
-        tdl_text.value = '';
         data.push(tdl_text_value);
 
 //        <li class="tdl-list-item">
@@ -66,6 +65,9 @@
 
         btn_tdl_del.list_item = tdl_list_item;
         btn_tdl_del.onclick = btnDelOnclickHandler;
+
+        tdl_check_label.parent_list_item = tdl_list_item;
+        tdl_check_label.ondblclick = checkDblclickHandler;
     }
 
     function delSelectedClickHandler() {
@@ -80,6 +82,67 @@
             alertMessage('삭제할 항목을 선택하세요.');
             return;
         }
+    }
+
+    function checkDblclickHandler() {
+        var edit_wrapper = document.createElement('div');
+        edit_wrapper.setAttribute('class', 'edit-wrapper');
+
+        var inputText = document.createElement('input');
+        inputText.setAttribute('class', 'tdl-text edit');
+        inputText.setAttribute('type', 'text');
+        inputText.value = this.innerText;
+
+        // <button class="btn-tdl-confirm" type="submit">확인</button>
+        // <button class="btn-tdl-cancel" type="submit">취소</button>
+        var btn_tdl_confirm = document.createElement('button');
+        btn_tdl_confirm.innerText = "확인";
+        btn_tdl_confirm.setAttribute('class', 'btn-tdl-confirm');
+        btn_tdl_confirm.setAttribute('type', 'submit');
+
+        var btn_tdl_cancel = document.createElement('button');
+        btn_tdl_cancel.innerText = "취소";
+        btn_tdl_cancel.setAttribute('class', 'btn-tdl-cancel');
+        btn_tdl_cancel.setAttribute('type', 'submit');
+
+
+        edit_wrapper.appendChild(inputText);
+        edit_wrapper.appendChild(btn_tdl_confirm);
+        edit_wrapper.appendChild(btn_tdl_cancel);
+
+        var parent_list_item = this.parent_list_item;
+        parent_list_item.appendChild(edit_wrapper);
+
+        inputText.focus();
+
+        var items = {
+            parent_list_item: parent_list_item,
+            input_text: inputText,
+            edit_wrapper: edit_wrapper,
+            label: this
+        };
+        btn_tdl_confirm.onclick = confirmClickHander;
+        btn_tdl_confirm.items = items;
+        btn_tdl_cancel.onclick = cancelClickHander;
+        btn_tdl_cancel.items = items;
+    }
+
+    function confirmClickHander() {
+        var item = this.items;
+        var text = item.input_text.value.trim();
+        if(!text) {
+            alertMessage('수정 입력란에 내용을 작성하세요.');
+            item.input_text.focus();
+            return;
+        }
+
+        item.label.innerText = text;
+        item.parent_list_item.removeChild(item.edit_wrapper);
+    }
+
+    function cancelClickHander() {
+        var item = this.items;
+        item.parent_list_item.removeChild(item.edit_wrapper);
     }
 
     function alertMessage(msg) {
